@@ -1,56 +1,50 @@
-# Vampire Survivors Clone - Epochal Conquest
+Horde Survivors - Project Overview
+Welcome to the Horde Survivors project! This document provides a high-level overview of the project structure and key directories.
 
-This project is a Vampire Survivors type game with a unique lore based on conquering different epochs of a sundered world. This initial version sets up the core game mechanics and the first epoch.
+Project Goal
+Horde Survivors is a "horde/army based vampire survivors" style game where the player chooses one of four distinct classes (Lich, Prince, Beast Lord, Void Spawn) at the beginning of a campaign. Each class offers a unique gameplay experience, progression system, and associated minigame. The core gameplay loop involves navigating mini open-world "floors" (akin to Slay the Spire progression), battling hordes of enemies, gathering resources, upgrading the chosen class's army/abilities, and defeating floor bosses to advance.
 
-## Current Features
+Main Directory Structure
+/Art_Source/: Contains all raw, editable art assets (e.g., .psd, .blend, .spp files). These are the source files used to generate game-ready assets.
 
-*   **Player:**
-    *   WASD movement.
-    *   Leveling system with stat increases (Health, Speed, Damage).
-    *   XP collection from defeated enemies.
-*   **Enemies:**
-    *   Basic enemy AI (moves towards player).
-    *   Spawn in waves with a configurable rate and maximum number.
-*   **Combat:**
-    *   Simple melee attack (Spacebar) with cooldown.
-    *   Weapons are temporary sprites that damage enemies on contact.
-*   **Game Systems:**
-    *   XP orbs dropped by enemies.
-    *   Pygame-based graphics for rendering.
-    *   Thematic coloring for the "Sundered Epoch of Primordials."
-*   **UI:**
-    *   Displays Player Level.
-    *   Displays Player Health (text and bar).
-    *   Displays Player XP (text and bar).
-    *   Displays current Wave Number.
-    *   Displays current Epoch Name.
+/Audio_Source/: Contains all raw, editable audio assets (e.g., DAW project files, unmixed .wav files).
 
-## Project Structure
+/Design/: Houses game design documents (GDDs), balance spreadsheets, narrative outlines, level design blueprints, UI mockups, and other planning materials.
 
-*   `main.py`: Main game loop, Pygame initialization, event handling, and core game flow.
-*   `player.py`: Defines the `Player` class, including movement, stats, leveling, and attacks.
-*   `enemy.py`: Defines the `Enemy` class, including movement AI.
-*   `weapon.py`: Defines the `Weapon` class used for player attacks.
-*   `xp_orb.py`: Defines the `XPOrb` class for experience points dropped by enemies.
-*   `game.py`: Manages game state, enemy spawning, combat resolution (weapon-enemy collision), XP collection, and leveling checks.
-*   `graphics.py`: Currently unused, intended for more complex graphics rendering functions.
-*   `config.py`: Contains game settings like screen dimensions, colors, speeds, spawn rates, UI parameters, etc.
-*   `assets/`: Directory for game assets (currently empty, sprites are procedurally generated).
+/Game/: The root directory for the game engine project (e.g., Unity's Assets folder or Unreal Engine's Content folder). This contains all game-ready assets, scripts, scenes, and configurations.
 
-## Setup and Run
+/Tools/: Custom tools developed to aid in the creation, building, or management of the game (e.g., level editor extensions, build scripts).
 
-1.  Ensure you have Python installed.
-2.  Install Pygame: `pip install pygame`
-3.  Clone this repository.
-4.  Run the game: `python main.py`
+/Documentation/: Technical documentation, coding standards, API references, and other developer-focused guides.
 
-## Future Development Ideas (Beyond this initial phase)
+/ProjectManagement/: Files related to project management, such as build outputs, QA test plans, bug reports, and milestone tracking.
 
-*   Actual sprite assets for player, enemies, weapons.
-*   Different enemy types per epoch.
-*   More diverse weapons and attack patterns.
-*   Passive abilities and class system.
-*   Detailed lore implementation for each epoch.
-*   Idle game mechanics.
-*   Sound effects and music.
-*   More sophisticated UI and menus.
+Getting Started
+Familiarize yourself with the Design documents in /Design/ to understand the core mechanics, class specifics, and progression systems.
+
+For Game Assets & Logic: The primary development work will occur within the /Game/ directory, using the chosen game engine.
+
+Source Art/Audio: If you are contributing art or audio, work within the /Art_Source/ or /Audio_Source/ directories and export/import game-ready assets into the /Game/ directory.
+
+Consult /Documentation/ for coding standards and technical guidelines.
+
+Key Systems (Conceptual)
+Class System: Lich, Prince, Beast Lord, Void Spawn with unique units, abilities, and minigames.
+
+Combat: Vampire Survivors-inspired horde combat with automated/semi-automated attacks.
+
+Progression: Slay the Spire-inspired floor-based advancement with mini open-world exploration on each floor.
+
+Resources: In-run XP/currency, class-specific resources, and meta-progression currency.
+
+Minigames:
+
+Lich: Undead fusion.
+
+Prince: Idle kingdom management.
+
+Beast Lord: Monster breeding & shamanic tattoo carving.
+
+Void Spawn: Evolutionary path fueled by consuming enemies.
+
+Refer to the README.md file within each subdirectory for more specific information about its contents and purpose.
